@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.4.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Genius Geometry App</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <div
+          class="px-2"
+          style="
+            width: full;
+            height: 130px;
+            background: rgba(16, 144, 216, 0.1);
+            border-radius: 8px;
+          "
+        >
+          <div id="navContainer" class="flex items-center justify-between">
+            <div id="leftNav">
+              <div>
+                <span
+                  style="
+                    color: rgba(17, 17, 17, 0.8);
+                    font-size: 45px;
+                    font-family: Inter;
+                    font-weight: 700;
+                    word-wrap: break-word;
+                  "
+                  >Interactive <br /></span
+                ><span
+                  style="
+                    color: rgba(17, 17, 17, 0.6);
+                    font-size: 30px;
+                    font-family: Inter;
+                    font-weight: 500;
+                    line-height: 40px;
+                    letter-spacing: 1.5px;
+                    word-wrap: break-word;
+                  "
+                  >Geometry Genius</span
+                >
+              </div>
+            </div>
+            <div id="rightNav" class="hidden sm:block">
+              <div
+                style="
+                  width: 120px;
+                  height: 48px;
+                  background: #1090d8;
+                  border-radius: 8px;
+                "
+                class="flex items-center justify-center"
+              >
+                <h1
+                  style="
+                    color: white;
+                    font-size: 20px;
+                    font-family: Inter;
+                    font-weight: 700;
+                    line-height: 30px;
+                    word-wrap: break-word;
+                  "
+                >
+                  Blog
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div id="mainContainer" class="flex flex-col lg:flex-row w-[100%] mb-4">
+          <div id="gridLeft" class="lg:w-[70%] sm:w-[100%]">
+            <div class="grid grid-cols-1 gap-4 xl:grid-cols-3 md:grid-cols-2">
+              <div class="h-[536px] bg-white p-8">
+                <div class="flex flex-col items-center gap-y-6">
+                  <div id="imgContainer" class="h-[200px]">
+                    <img src="./images/triangle.png" alt="" class="h-full" />
+                  </div>
+                  <div
+                    id="formulaContainer flex flex-col items-center justify-center"
+                  >
+                    <h1 class="text-[25px] font-bold text-center">Triangle</h1>
+                    <p
+                      class="text-[16px] mt-2 w-[full] font-semibold text-[#144141] text-center"
+                    >
+                      Area(A) = 0.5 X b X h
+                    </p>
+                    <div
+                      id="inputContainer"
+                      class="gap-x-3 my-6 flex justify-center w-[100%] px-6 ms-2"
+                    >
+                      <div class="w-[50%] flex">
+                        <input
+                          id="triangleB"
+                          type="number"
+                          class="bg-[#f1f1f1] w-[60%] ps-2 outline-0 py-1"
+                          placeholder="b"
+                          onfocus="this.placeholder=''"
+                          onblur="this.placeholder='b'"
+                        />
+                        <p
+                          class="text-[16px] text-center text-slate-500 font-bold w-[40%]"
+                        >
+                          cm
+                        </p>
+                      </div>
+                      <div class="w-[50%] flex">
+                        <input
+                          id="triangleH"
+                          onfocus="this.placeholder=''"
+                          onblur="this.placeholder='h'"
+                          type="number"
+                          class="bg-[#f1f1f1] ps-2 py-1 outline-0 w-[60%]"
+                          placeholder="h"
+                        />
+                        <p
+                          class="text-[16px] text-center text-slate-500 font-bold w-[40%]"
+                        >
+                          cm
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    id="triangleAreaBtn"
+                    class="w-full py-3 text-[26px] bg-blue-500 rounded-md text-white bold"
+                  >
+                    Calculate
+                  </button>
+                </div>
+              </div>
+              <div class="h-[536px] bg-white p-8">
+                <div class="flex flex-col items-center gap-y-6">
+                  <div id="imgContainer" class="h-[200px]">
+                    <img src="./images/rectangle.png" class="h-full" alt="" />
+                  </div>
+                  <div
+                    id="formulaContainer flex flex-col items-center justify-center"
+                  >
+                    <h1 class="text-[25px] font-bold text-center">Rectangle</h1>
+                    <p
+                      class="text-[16px] mt-2 w-[full] font-semibold text-[#144141] text-center"
+                    >
+                      Area (A) = w X l
+                    </p>
+                    <div
+                      id="inputContainer"
+                      class="gap-x-3 my-6 flex justify-center w-[100%] px-6 ms-2"
+                    >
+                      <div class="w-[50%] flex">
+                        <input
+                          id="rectangleW"
+                          type="number"
+                          class="bg-[#f1f1f1] w-[60%] ps-2 outline-0 py-1"
+                          placeholder="w"
+                          onfocus="this.placeholder=''"
+                          onblur="this.placeholder='w'"
+                        />
+                        <p
+                          class="text-[16px] text-center text-slate-500 font-bold w-[40%]"
+                        >
+                          cm
+                        </p>
+                      </div>
+                      <div class="w-[50%] flex">
+                        <input
+                          id="rectangleL"
+                          onfocus="this.placeholder=''"
+                          onblur="this.placeholder='l'"
+                          type="number"
+                          class="bg-[#f1f1f1] ps-2 py-1 outline-0 w-[60%]"
+                          placeholder="l"
+                        />
+                        <p
+                          class="text-[16px] text-center text-slate-500 font-bold w-[40%]"
+                        >
+                          cm
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    id="rectangleAreaBtn"
+                    class="w-full py-3 text-[26px] bg-blue-500 rounded-md text-white bold"
+                  >
+                    Calculate
+                  </button>
+                </div>
+              </div>
+              <div class="h-[536px] bg-white p-8">
+                <div class="flex flex-col items-center gap-y-6">
+                  <div id="imgContainer" class="h-[200px]">
+                    <img
+                      src="./images/parallelogram.png"
+                      class="h-full"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    id="formulaContainer flex flex-col items-center justify-center"
+                  >
+                    <h1 class="text-[25px] font-bold text-center">
+                      Parallelogram
+                    </h1>
+                    <p
+                      class="text-[16px] mt-2 w-[full] font-semibold text-[#144141] text-center"
+                    >
+                      Area(A) = b X h
+                    </p>
+                    <div
+                      id="inputContainer"
+                      class="gap-x-3 my-6 flex justify-center w-[100%] px-6 ms-2"
+                    >
+                      <div class="w-[50%] flex">
+                        <input
+                          id="parallelogramB"
+                          type="number"
+                          class="bg-[#f1f1f1] w-[60%] ps-2 outline-0 py-1"
+                          placeholder="b"
+                          onfocus="this.placeholder=''"
+                          onblur="this.placeholder='b'"
+                        />
+                        <p
+                          class="text-[16px] text-center text-slate-500 font-bold w-[40%]"
+                        >
+                          cm
+                        </p>
+                      </div>
+                      <div class="w-[50%] flex">
+                        <input
+                          id="parallelogramH"
+                          onfocus="this.placeholder=''"
+                          onblur="this.placeholder='h'"
+                          type="number"
+                          class="bg-[#f1f1f1] ps-2 py-1 outline-0 w-[60%]"
+                          placeholder="h"
+                        />
+                        <p
+                          class="text-[16px] text-center text-slate-500 font-bold w-[40%]"
+                        >
+                          cm
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    id="parallelogramAreaBtn"
+                    class="w-full py-3 text-[26px] bg-blue-500 rounded-md text-white bold"
+                  >
+                    Calculate
+                  </button>
+                </div>
+              </div>
+              <div class="h-[536px] bg-white p-8">
+                <div class="flex flex-col items-center gap-y-6">
+                  <div id="imgContainer" class="h-[200px]">
+                    <img src="./images/rhombus.png" class="h-full" alt="" />
+                  </div>
+                  <div
+                    id="formulaContainer flex flex-col items-center justify-center"
+                  >
+                    <h1 class="text-[25px] font-bold text-center">Rhombus</h1>
+                    <p
+                      class="text-[16px] mt-2 w-[full] font-semibold text-[#144141] text-center"
+                    >
+                      Area(A) = 0.5 X d<sub>1</sub> X d<sub>2</sub>
+                    </p>
+                    <div
+                      id="inputContainer"
+                      class="gap-x-3 my-6 flex justify-center w-[100%] px-6 ms-2"
+                    >
+                      <div class="w-[50%] flex">
+                        <input
+                          id="rhombusD1"
+                          type="number"
+                          class="bg-[#f1f1f1] w-[60%] ps-2 outline-0 py-1"
+                          placeholder="d1"
+                          onfocus="this.placeholder=''"
+                          onblur="this.placeholder='d1'"
+                        />
+                        <p
+                          class="text-[16px] text-center text-slate-500 font-bold w-[40%]"
+                        >
+                          cm
+                        </p>
+                      </div>
+                      <div class="w-[50%] flex">
+                        <input
+                          id="rhombusD2"
+                          onfocus="this.placeholder=''"
+                          onblur="this.placeholder='d2'"
+                          type="number"
+                          class="bg-[#f1f1f1] ps-2 py-1 outline-0 w-[60%]"
+                          placeholder="d2"
+                        />
+                        <p
+                          class="text-[16px] text-center text-slate-500 font-bold w-[40%]"
+                        >
+                          cm
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    id="rhombusAreaBtn"
+                    class="w-full py-3 text-[26px] bg-blue-500 rounded-md text-white bold"
+                  >
+                    Calculate
+                  </button>
+                </div>
+              </div>
+              <div class="h-[536px] bg-white p-8">
+                <div class="flex flex-col items-center gap-y-6">
+                  <div id="imgContainer" class="h-[200px]">
+                    <img src="./images/pentagon.png" class="h-full" alt="" />
+                  </div>
+                  <div
+                    id="formulaContainer flex flex-col items-center justify-center"
+                  >
+                    <h1 class="text-[25px] font-bold text-center">Pentagon</h1>
+                    <p
+                      class="text-[16px] mt-2 w-[full] font-semibold text-[#144141] text-center"
+                    >
+                      Area(A) = 0.5 X b X p
+                    </p>
+                    <div
+                      id="inputContainer"
+                      class="gap-x-3 my-6 flex justify-center w-[100%] px-6 ms-2"
+                    >
+                      <div class="w-[50%] flex">
+                        <input
+                          id="pentagonB"
+                          type="number"
+                          class="bg-[#f1f1f1] w-[60%] ps-2 outline-0 py-1"
+                          placeholder="b"
+                          onfocus="this.placeholder=''"
+                          onblur="this.placeholder='b'"
+                        />
+                        <p
+                          class="text-[16px] text-center text-slate-500 font-bold w-[40%]"
+                        >
+                          cm
+                        </p>
+                      </div>
+                      <div class="w-[50%] flex">
+                        <input
+                          id="pentagoP"
+                          onfocus="this.placeholder=''"
+                          onblur="this.placeholder='p'"
+                          type="number"
+                          class="bg-[#f1f1f1] ps-2 py-1 outline-0 w-[60%]"
+                          placeholder="h"
+                        />
+                        <p
+                          class="text-[16px] text-center text-slate-500 font-bold w-[40%]"
+                        >
+                          cm
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    id="pentagonAreaBtn"
+                    class="w-full py-3 text-[26px] bg-blue-500 rounded-md text-white bold"
+                  >
+                    Calculate
+                  </button>
+                </div>
+              </div>
+              <div class="h-[536px] bg-white p-8">
+                <div class="flex flex-col items-center gap-y-6">
+                  <div id="imgContainer" class="h-[200px]">
+                    <img src="./images/ellipse.png" class="h-full" alt="" />
+                  </div>
+                  <div
+                    id="formulaContainer flex flex-col items-center justify-center"
+                  >
+                    <h1 class="text-[25px] font-bold text-center">Ellipse</h1>
+                    <p
+                      class="text-[16px] mt-2 w-[full] font-semibold text-[#144141] text-center"
+                    >
+                      Area (A) =&Pi;ab
+                    </p>
+                    <div
+                      id="inputContainer"
+                      class="gap-x-3 my-6 flex justify-center w-[100%] px-6 ms-2"
+                    >
+                      <div class="w-[50%] flex">
+                        <input
+                          id="ellipseA"
+                          type="number"
+                          class="bg-[#f1f1f1] w-[60%] ps-2 outline-0 py-1"
+                          placeholder="a"
+                          onfocus="this.placeholder=''"
+                          onblur="this.placeholder='b'"
+                        />
+                        <p
+                          class="text-[16px] text-center text-slate-500 font-bold w-[40%]"
+                        >
+                          cm
+                        </p>
+                      </div>
+                      <div class="w-[50%] flex">
+                        <input
+                          id="ellipseH"
+                          onfocus="this.placeholder=''"
+                          onblur="this.placeholder='b'"
+                          type="number"
+                          class="bg-[#f1f1f1] ps-2 py-1 outline-0 w-[60%]"
+                          placeholder="h"
+                        />
+                        <p
+                          class="text-[16px] text-center text-slate-500 font-bold w-[40%]"
+                        >
+                          cm
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    id="ellipseAreaBtn"
+                    class="w-full py-3 text-[26px] bg-blue-500 rounded-md text-white bold"
+                  >
+                    Calculate
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            id="gridRight"
+            class="lg:w-[30%] sm:w-[100%] flex justify-center mt-5"
+          >
+            <div class="h-[500px] overflow-y-auto w-[80%] bg-white text-center">
+              <h1 class="mt-6 underline text-[20px] font-bold">
+                Area Calculation
+              </h1>
+              <div id="resultContainer">
+                <!-- <div>
+                  <div class="px-6 mt-3 flex justify-between items-center">
+                    <div>1.</div>
+                    <div>Triangle</div>
+                    <div>12 cm<sup>2</sup></div>
+                    <button class="bg-blue-400 px-2 py-1 rounded-sm">
+                      Convert to m<sup>2</sup>
+                    </button>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
